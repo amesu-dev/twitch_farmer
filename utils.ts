@@ -1,7 +1,4 @@
 import * as consts from './consts';
-import { nanoid } from 'nanoid';
-import { make_info_body } from './template/stream-info';
-import { broadbcast_info_body } from './template/broadcast-info';
 
 export function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
