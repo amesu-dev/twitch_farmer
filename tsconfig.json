@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    // "noEmit": true,
+    "allowJs": true,
+    "outDir": "dist",
+
+    "target": "ES6",
+    "module": "CommonJS",
+    "types": ["node"]
+  },
+
+  "include": [
+    "**/*", "./*"
+  ],
+  "exclude": [
+    "dist/**", "dist_old/**"
+  ]
+}
