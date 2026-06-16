@@ -38,7 +38,7 @@ const responses: { [x: string]: (ws: WebSocket, data: any) => void } = {
   async notification(ws: WebSocket, data: any) {
     const content = JSON.parse(data.notification.pubsub);
     const subscrition = subscriptions[data.notification.subscription.id];
-    console.log(`[MSG][${subscrition}]`, content);
+    // console.log(`[MSG][${subscrition}]`, content);
 
     if (subscrition === consts.TWITCH_SELF_EVENTS.POINTS_EARNED) {
       if (content.type === "claim-available") {

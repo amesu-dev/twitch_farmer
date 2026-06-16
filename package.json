@@ -13,5 +13,8 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^25.9.1"
+  },
+  "dependencies": {
+    "nanoid": "^5.1.11"
   }
 }
