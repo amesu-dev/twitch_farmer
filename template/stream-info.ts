@@ -1,3 +1,40 @@
+/**
+ * @param username Username of target streamer
+ * @returns Request object
+ * 
+ * Request returns:
+ * ```json
+ * {
+    "data": {
+      "user": {
+        "id": string,
+        "broadcastSettings": {
+          "id": string,
+          "title": string,
+          "__typename": "BroadcastSettings"
+        },
+        "stream": { // or null
+          "id": string,
+          "createdAt": string,
+          "game": {
+            "id": string,
+            "displayName": string,
+            "__typename": "Game"
+          },
+          "__typename": "Stream"
+        },
+        "__typename": "User"
+      }
+    },
+    "extensions": {
+      "durationMilliseconds": 58,
+      "operationName": "NielsenContentMetadata",
+      "requestID": ""
+    }
+  }
+  ```
+ */
+
 export const make_info_body = (username: string) => ({
   "operationName": "NielsenContentMetadata",
   "variables": {

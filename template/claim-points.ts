@@ -1,4 +1,11 @@
-import * as consts from '../consts';
+/**
+ * @param channel_id id of streamer, where you collecting points
+ * @param claim_id id of collectable present
+ * @returns Request object
+ * 
+ * Request returns:
+ * `Example will be here... Oneday...`
+ */
 
 export const make_claim_points = (channel_id: string, claim_id: string) => ({
   "operationName": "ClaimCommunityPoints",

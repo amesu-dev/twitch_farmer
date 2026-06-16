@@ -1,6 +1,6 @@
 import * as consts from './consts';
 import * as zlib from 'node:zlib';
-import { general_event } from "./template/general";
+import { make_general_event } from "./template/general";
 import { make_minute_watched } from './template/minute-watched';
 import User from './user';
 import events from './events';
@@ -179,10 +179,9 @@ class StreamerManager {
   private async watch_minute(streamer: User) {
     let event = make_minute_watched(streamer);
 
-    let event_body = { ...general_event };
-    event_body.variables = { ...general_event.variables };
-    event_body.variables.input = { ...general_event.variables.input };
-    event_body.variables.input.data = zlib.gzipSync(JSON.stringify(event)).toString("base64");
+    let event_body = make_general_event(
+      zlib.gzipSync(JSON.stringify(event)).toString("base64")
+    );
     const res = await fetch('https://gql.twitch.tv/gql', {
       method: 'POST',
       headers: consts.headers,

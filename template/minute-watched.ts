@@ -1,6 +1,11 @@
 import * as consts from '../consts';
 import User from '../user';
 
+/**
+ * @param user User object of streamer
+ * @returns Object for sending minute watch event. 5 minutes = 10 points; 15 = collectable 50 points
+ */
+
 export const make_minute_watched = (user: User) => ({
   "event": "minute-watched",
   "properties": {
